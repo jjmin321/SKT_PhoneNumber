@@ -15,6 +15,12 @@ type config struct {
 
 type skt struct {
 	URL string `toml:"url"`
+	ViewId string `toml:"viewId"`
+	ServiceId string `toml:"serviceId"`
+	Chg_cd string `toml:"chg_cd"`
+	Co_cd string `toml:"co_cd"`
+	Line_num_from string `toml:"line_num_from"`
+	Line_num_to string `toml:"line_num_to"`
 }
 
 func init() {
