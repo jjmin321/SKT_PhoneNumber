@@ -28,16 +28,4 @@ func main() {
 	}
 	log.Info.Println(resp.Request.RequestURI)
 	defer resp.Body.Close()
-
-	root, err := html.Parse(resp.Body)
-	if err != nil {
-		log.Err.Fatalln("HTML Parse 과정 중 오류")
-	}
-
-	phoneNumberList := scrape.FindAll(root, parseMainNodes)
-	log.Info.Println(phoneNumberList)
-
-	for _, phoneNumber := range phoneNumberList {
-		log.Info.Println(scrape.Text(phoneNumber))
-	}
 }

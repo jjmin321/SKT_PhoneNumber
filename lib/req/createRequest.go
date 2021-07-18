@@ -21,7 +21,6 @@ func CreateRequest(url string) *http.Request{
 	query.Add("line_num_from", config.Config.Skt.Line_num_from)
 	query.Add("line_num_to", config.Config.Skt.Line_num_to)
 	req.URL.RawQuery = query.Encode()
-	open.Start(req.URL.String()) // 브라우저에서 요청하면 됨
-	log.Info.Println(req.URL) // 프로그램에서 요청하면 안 됨
+	open.Start(req.URL.String()) 
 	return req
 }
