@@ -5,17 +5,7 @@ import (
 	"SKT_PhoneNumber/lib/log"
 	"SKT_PhoneNumber/lib/req"
 	"net/http"
-	"github.com/yhat/scrape"
-	"golang.org/x/net/html"
-	"golang.org/x/net/html/atom"
 )
-
-func parseMainNodes(n *html.Node) bool {
-	if n.DataAtom == atom.Strong {
-		return scrape.Attr(n, "class") == "cpTit"
-	}
-	return false
-}
 
 func main() {
 	client := &http.Client{
